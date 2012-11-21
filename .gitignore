@@ -1,4 +1,25 @@
 *.class
+/bin/*
+/conf/*
+/docs/*
+/eclipse/*
+/forge/*
+/jars/*
+/lib/*
+/logs/*
+/modsrc/*
+/reobf/*
+/runtime/*
+/temp/*
+
+/src/minecraft/*
+/src/minecraft_server/*
+/src/common/*
+!/src/common/ardenexal/nethercraft/*
+!/src/minecraft/ardenexal/nethercraft/*
+
+*.bat
+*.sh
 
 # Package Files #
 *.jar
