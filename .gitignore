@@ -15,8 +15,8 @@
 /src/minecraft/*
 /src/minecraft_server/*
 /src/common/*
-!/src/common/ardenexal/nethercraft/
-!/src/minecraft/ardenexal/nethercraft/
+!/src/common/ardenexal/
+!/src/minecraft/ardenexal/
 
 *.bat
 *.sh
