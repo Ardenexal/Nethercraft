@@ -31,12 +31,12 @@ public class Items {
 	//Cooked Molds
 	public final static Item cookedpickmolditem = new cookedPickMoldItem(4114);
 	public final static Item cookedaxemolditem = new cookedAxeMoldItem(4115);
-	public final static Item cookedshovelmolditem = new cookedShovelMoldItem(4111);
-	public final static Item cookedswordblademolditem = new cookedSwordBladeMoldItem(4116);
-	public final static Item cookedswordhandlemolditem = new cookedSwordHandleMoldItem(4117);
+	public final static Item cookedshovelmolditem = new cookedShovelMoldItem(4116);
+	public final static Item cookedswordblademolditem = new cookedSwordBladeMoldItem(4117);
+	public final static Item cookedswordhandlemolditem = new cookedSwordHandleMoldItem(4118);
 
-	public final static Item jiwastone = new JiwaStone(4116);
-	public final static Item hellstone = new itemHellstone(4117);
+	public final static Item jiwastone = new JiwaStone(4119);
+	public final static Item hellstone = new itemHellstone(4120);
 	
 	public static void include(){
 	LanguageRegistry.addName(uncookedpickmolditem,"Uncooked Pick Mold");

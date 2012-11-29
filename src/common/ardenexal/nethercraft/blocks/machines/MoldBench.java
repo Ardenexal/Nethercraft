@@ -2,15 +2,19 @@ package ardenexal.nethercraft.blocks.machines;
 
 import java.util.Random;
 
+import ardenexal.nethercraft.Nethercraft;
+
 import net.minecraft.src.*;
 
 public class MoldBench extends BlockContainer {
 
-        protected MoldBench (int id) {
+        public MoldBench (int id) {
                 super(id, Material.wood);
                 setHardness(2.0F);
                 setResistance(5.0F);
                 setBlockName("blockMoldBench");
+                setCreativeTab(Nethercraft.tabNethercraft);
+                
         }
 
         @Override
@@ -21,7 +25,7 @@ public class MoldBench extends BlockContainer {
                         return false;
                 }
                 //opens gui, to be implemented later
-                //player.openGui();
+                player.openGui(Nethercraft.instance,0,world,x,y,z);
                 return true;
         }
 
