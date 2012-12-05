@@ -2,6 +2,8 @@ package ardenexal.nethercraft.blocks.machines;
 
 import net.minecraft.src.Container;
 import net.minecraft.src.EntityPlayer;
+import net.minecraft.src.IInventory;
+import net.minecraft.src.InventoryCraftResult;
 import net.minecraft.src.InventoryPlayer;
 import net.minecraft.src.ItemStack;
 import net.minecraft.src.Slot;
@@ -10,14 +12,34 @@ import net.minecraft.src.Slot;
 
 public class containerMoldBench extends Container {
 
-        protected MoldBenchTileEntity tileEntity;
+        protected TileEntityMoldBench tileEntity;
+        public IInventory craftResult;
        
-        public containerMoldBench (InventoryPlayer inventoryPlayer, MoldBenchTileEntity te){
+        public class SlotMoldBench extends Slot{
+
+        	private final IInventory craftMatrix;
+        	private EntityPlayer thePlayer;
+        	
+			public SlotMoldBench(EntityPlayer entityplayer, IInventory iinventory, IInventory iinventory1, int i, int j, int k) {
+				super(iinventory1, i, j, k);
+				thePlayer = entityplayer;
+				craftMatrix = iinventory;
+			}
+			@Override
+			public boolean isItemValid(ItemStack itemstack) {
+			return false;
+			}
+        	
+        }
+        public containerMoldBench (InventoryPlayer inventoryPlayer, TileEntityMoldBench te){
                 tileEntity = te;
 
                 //the Slot constructor takes the IInventory and the slot number in that it binds to
                 //and the x-y coordinates it resides on-screen
-                addSlotToContainer(new Slot(tileEntity, 0, 76, 37));
+                craftResult = new InventoryCraftResult();
+                addSlotToContainer(new Slot(tileEntity, 0, 16, 70));
+                addSlotToContainer(new Slot(tileEntity, 1, 64, 39));
+                addSlotToContainer(new SlotMoldBench(inventoryPlayer.player,tileEntity, craftResult, 0, 118, 39));
 
                 //commonly used vanilla code that adds the player's inventory
                 bindPlayerInventory(inventoryPlayer);
@@ -33,12 +55,12 @@ public class containerMoldBench extends Container {
                 for (int i = 0; i < 3; i++) {
                         for (int j = 0; j < 9; j++) {
                                 addSlotToContainer(new Slot(inventoryPlayer, j + i * 9 + 9,
-                                                8 + j * 18, 84 + i * 18));
+                                                16 + j * 18, 92 + i * 18));
                         }
                 }
 
                 for (int i = 0; i < 9; i++) {
-                        addSlotToContainer(new Slot(inventoryPlayer, i, 8 + i * 18, 142));
+                        addSlotToContainer(new Slot(inventoryPlayer, i, 16 + i * 18, 150));
                 }
         }
         /**
