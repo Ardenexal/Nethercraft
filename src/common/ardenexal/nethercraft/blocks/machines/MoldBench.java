@@ -72,7 +72,7 @@ public class MoldBench extends BlockContainer {
 
         @Override
         public TileEntity createNewTileEntity(World world) {
-                return new MoldBenchTileEntity();
+                return new TileEntityMoldBench();
         }
 
 }

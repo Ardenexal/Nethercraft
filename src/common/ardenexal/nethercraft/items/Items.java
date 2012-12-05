@@ -1,7 +1,7 @@
 package ardenexal.nethercraft.items;
 
-import javax.swing.Spring;
 
+import ardenexal.nethercraft.Nethercraft;
 import ardenexal.nethercraft.items.molds.UncookedAxeMoldItem;
 import ardenexal.nethercraft.items.molds.UncookedPickMoldItem;
 import ardenexal.nethercraft.items.molds.UncookedShovelMoldItem;
@@ -21,6 +21,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class Items {
 
+	
 	//Uncooked Molds
 	public final static Item uncookedpickmolditem = new UncookedPickMoldItem(4109);
 	public final static Item uncookedaxemolditem = new UncookedAxeMoldItem(4110);

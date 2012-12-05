@@ -10,7 +10,7 @@ import ardenexal.nethercraft.lib.Reference;
 
 public class GuiMoldBench extends GuiContainer {
 
-        public GuiMoldBench (InventoryPlayer inventoryPlayer,MoldBenchTileEntity tileEntity) {
+        public GuiMoldBench (InventoryPlayer inventoryPlayer,TileEntityMoldBench tileEntity) {
                 //the container is instantiated and passed to the superclass for handling
                 super(new containerMoldBench(inventoryPlayer, tileEntity));
         }
@@ -19,9 +19,9 @@ public class GuiMoldBench extends GuiContainer {
         protected void drawGuiContainerForegroundLayer(int par1, int par2) {
                 //draw text and stuff here
                 //the parameters for drawString are: string, x, y, color
-                fontRenderer.drawString("Mold Bench", 8, 6, 4210752);
-                //draws "Inventory" or your regional equivalent
-                fontRenderer.drawString(StatCollector.translateToLocal("container.inventory"), 8, ySize - 96 + 2, 4210752);
+                fontRenderer.drawString("Mold Bench", (xSize/2)-25, 6, 4210752);
+
+                
         }
 
         @Override
@@ -33,7 +33,7 @@ public class GuiMoldBench extends GuiContainer {
                 this.mc.renderEngine.bindTexture(texture);
                 int x = (width - xSize) / 2;
                 int y = (height - ySize) / 2;
-                this.drawTexturedModalRect(x, y, 0, 0, xSize, ySize);
+                this.drawTexturedModalRect(x, y, 0, 0, 191, 176);
         }
 
 }

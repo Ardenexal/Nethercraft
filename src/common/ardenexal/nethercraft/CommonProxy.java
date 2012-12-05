@@ -5,7 +5,7 @@ import net.minecraft.src.TileEntity;
 import net.minecraft.src.World;
 import cpw.mods.fml.common.network.IGuiHandler;
 import ardenexal.nethercraft.blocks.machines.GuiMoldBench;
-import ardenexal.nethercraft.blocks.machines.MoldBenchTileEntity;
+import ardenexal.nethercraft.blocks.machines.TileEntityMoldBench;
 import ardenexal.nethercraft.blocks.machines.containerMoldBench;
 import ardenexal.nethercraft.lib.Reference;
 
@@ -22,8 +22,8 @@ public class CommonProxy implements IGuiHandler {
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world,
 			int x, int y, int z) {
         TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
-        if(tileEntity instanceof MoldBenchTileEntity){
-                return new containerMoldBench(player.inventory, (MoldBenchTileEntity) tileEntity);
+        if(tileEntity instanceof TileEntityMoldBench){
+                return new containerMoldBench(player.inventory, (TileEntityMoldBench) tileEntity);
         }
 		return null;
 	}
@@ -32,8 +32,8 @@ public class CommonProxy implements IGuiHandler {
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world,
 			int x, int y, int z) {
         TileEntity tileEntity = world.getBlockTileEntity(x, y, z);
-        if(tileEntity instanceof MoldBenchTileEntity){
-                return new GuiMoldBench(player.inventory, (MoldBenchTileEntity) tileEntity);
+        if(tileEntity instanceof TileEntityMoldBench){
+                return new GuiMoldBench(player.inventory, (TileEntityMoldBench) tileEntity);
         }
 		return null;
 	}

@@ -1,13 +1,18 @@
 package ardenexal.nethercraft;
 
+import java.io.File;
+
 import ardenexal.nethercraft.blocks.Blocks;
 import ardenexal.nethercraft.blocks.machines.MoldBench;
 import ardenexal.nethercraft.blocks.ores.HellstoneOre;
+import ardenexal.nethercraft.configuration.NethercraftConfiguration;
 import ardenexal.nethercraft.items.Items;
 import ardenexal.nethercraft.worldgen.OreGeneration;
 import ardenexal.nethercraft.worldgen.WorldGen;
 import net.minecraft.src.Block;
 import net.minecraft.src.CreativeTabs;
+import net.minecraftforge.common.Configuration;
+import net.minecraftforge.common.Property;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -23,7 +28,7 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = "Ardenexal.Nethercraft", name = "Nethercraft", version = "0.0.0")
+@Mod(modid = "Ardenexal.Nethercraft", name = "Nethercraft", version = "0.0.1")
 @NetworkMod(clientSideRequired = true, serverSideRequired = true,channels={"Nethercraft"}, packetHandler = NethercraftPacketHandler.class)
 
 public class Nethercraft {
@@ -32,8 +37,6 @@ public class Nethercraft {
 	public static Nethercraft instance;
 		
 
-	
-	
 	// Says where the client and server 'proxy' code is loaded.
 	@SidedProxy(clientSide = "ardenexal.nethercraft.client.ClientProxy", serverSide = "ardenexal.nethercraft.CommonProxy")
 	
@@ -41,9 +44,11 @@ public class Nethercraft {
 
 	public static CreativeTabs tabNethercraft = new CreativeTabNethercraft(CreativeTabs.getNextID(), "NetherCraft");
 	
+	public static NethercraftConfiguration mainConfiguration;
 	@PreInit
 	public void preInit(FMLPreInitializationEvent event) {
-		// Stub Method
+		mainConfiguration = new NethercraftConfiguration(new File(event.getModConfigurationDirectory(),"Nethercraft.conf"));
+
 	}
 
 	@Init
