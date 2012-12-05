@@ -8,9 +8,9 @@ public class FuelHandler implements IFuelHandler
 {
 public int getBurnTime(ItemStack fuel) 
 {
-	if(fuel.itemID == Items.hellstone.shiftedIndex)
+	if(fuel.itemID == Items.hellstone.shiftedIndex){
 		return 2000;
-		else
+	}else
 		return 0;
 }
 }
